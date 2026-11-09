@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#1d2f4b" />
+    <title>Generate barcode labels · Smart Warehouse</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Main navigation">
+        <div class="brand">
+          <img class="brand-mark" src="warehouse-mark.svg" alt="" />
+          <div class="brand-name"><b>Smart</b> <span>Warehouse</span></div>
+        </div>
+        <nav class="side-nav">
+          <div class="nav-group">
+            <div class="nav-heading" data-i18n="operations">OPERATIONS</div>
+            <a class="nav-item" href="#"
+              ><img src="dashboard.svg" alt="" /><span
+                data-i18n="dashboard"
+                >Dashboard</span
+              ></a
+            >
+            <a class="nav-item" href="#"
+              ><img src="bell.svg" alt="" /><span data-i18n="alerts"
+                >Alerts</span
+              ><small data-count="5">5</small></a
+            >
+            <a class="nav-item" href="#"
+              ><img src="box.svg" alt="" /><span data-i18n="inventory"
+                >Inventory</span
+              ></a
+            >
+            <a class="nav-item active" href="#"
+              ><img src="barcode-small.svg" alt="" /><span
+                data-i18n="products"
+                >Products</span
+              ></a
+            >
+          </div>
+          <div class="nav-group">
+            <div class="nav-heading" data-i18n="planning">PLANNING</div>
+            <a class="nav-item" href="#"
+              ><img src="trending-up.svg" alt="" /><span
+                data-i18n="forecast"
+                >AI forecast</span
+              ></a
+            >
+            <a class="nav-item" href="#"
+              ><img src="clipboard-list.svg" alt="" /><span
+                data-i18n="purchaseOrders"
+                >Purchase orders</span
+              ><small data-count="6">6</small></a
+            >
+            <a class="nav-item" href="#"
+              ><img src="truck.svg" alt="" /><span data-i18n="suppliers"
+                >Suppliers</span
+              ></a
+            >
+            <a class="nav-item" href="#"
+              ><img src="chart-bars.svg" alt="" /><span
+                data-i18n="reports"
+                >Reports</span
+              ></a
+            >
+          </div>
+        </nav>
+        <div class="account">
+          <div class="avatar"><span class="avatar-initials">WM</span></div>
+          <div class="account-copy">
+            <b data-i18n="warehouseManager">Warehouse Manager</b
+            ><span data-i18n="manager">Manager</span>
+          </div>
+          <div class="users-menu-wrap">
+            <button
+              class="users-button"
+              id="usersButton"
+              type="button"
+              aria-label="Active users"
+              aria-haspopup="dialog"
+              aria-expanded="false"
+              aria-controls="usersPopup"
+            >
+              <img src="users-outline.svg" alt="" /><span
+                class="user-badge"
+                data-count="5"
+                >5</span
+              >
+            </button>
+            <section
+              class="users-popup"
+              id="usersPopup"
+              role="dialog"
+              aria-label="Active users"
+              hidden
+            >
+              <header class="users-popup-header">
+                <div>
+                  <strong data-i18n="activeUsers">Active users</strong
+                  ><span data-i18n="signedInWebsite"
+                    >Signed in to the website</span
+                  >
+                </div>
+                <span class="online-count"
+                  ><i></i
+                  ><b
+                    ><span data-count="5">5</span>
+                    <span data-i18n="online">online</span></b
+                  ></span
+                >
+              </header>
+              <div class="active-users-list">
+                <div class="active-user">
+                  <span class="active-avatar tone-blue">AH<i></i></span
+                  ><span class="active-identity"
+                    ><b>Ahmed Hassan</b><small>ahmed@smartwh.com</small></span
+                  ><span class="role-chip">Employee</span>
+                </div>
+                <div class="active-user">
+                  <span class="active-avatar tone-green">SM<i></i></span
+                  ><span class="active-identity"
+                    ><b>Sara Mostafa</b><small>sara@smartwh.com</small></span
+                  ><span class="role-chip">Employee</span>
+                </div>
+                <div class="active-user">
+                  <span class="active-avatar tone-gold">KA<i></i></span
+                  ><span class="active-identity"
+                    ><b>Karim Adel</b><small>karim@supplier.com</small></span
+                  ><span class="role-chip role-merchant">Merchant</span>
+                </div>
+                <div class="active-user">
+                  <span class="active-avatar tone-purple">NY<i></i></span
+                  ><span class="active-identity"
+                    ><b>Nour Youssef</b><small>nour@smartwh.com</small></span
+                  ><span class="role-chip">Employee</span>
+                </div>
+                <div class="active-user">
+                  <span class="active-avatar tone-red"
+                    >MT<i class="presence-away"></i></span
+                  ><span class="active-identity"
+                    ><b>Mona Tarek</b
+                    ><small data-i18n="activeEightAgo"
+                      >Active 8 min ago</small
+                    ></span
+                  ><span class="role-chip role-merchant">Merchant</span>
+                </div>
+              </div>
+              <div class="users-custom-scrollbar" aria-hidden="true"><div class="users-custom-scrollbar-thumb"></div></div>
+              <footer class="users-popup-account">
+                <span class="active-avatar tone-manager">WM</span
+                ><span class="active-identity"
+                  ><b data-i18n="warehouseManager">Warehouse Manager</b
+                  ><small data-i18n="admin">Admin</small></span
+                ><button
+                  class="signout-button"
+                  type="button"
+                  aria-label="Sign out"
+                >
+                  <svg viewBox="0 0 20 20" aria-hidden="true">
+                    <path
+                      d="M12 3H5.5A1.5 1.5 0 0 0 4 4.5v11A1.5 1.5 0 0 0 5.5 17H12M10 10h7m0 0-3-3m3 3-3 3"
+                    />
+                  </svg>
+                </button>
+              </footer>
+            </section>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div class="page-heading">
+            <a class="back-link" href="#" data-i18n="backProducts"
+              >← Products</a
+            >
+            <h1 data-i18n="title">Generate barcode labels</h1>
+            <p data-i18n="subtitle">
+              Choose products and how many labels to print
+            </p>
+          </div>
+          <div class="top-actions">
+            <label class="search-box">
+              <img src="search.svg" alt="" />
+              <input
+                id="globalSearch"
+                type="search"
+                placeholder="Search products, SKUs..."
+                data-i18n-placeholder="searchPlaceholder"
+              />
+            </label>
+            <div class="language-switch" role="group" aria-label="Language">
+              <button
+                type="button"
+                class="language-option selected"
+                data-lang="en"
+              >
+                English
+              </button>
+              <button
+                type="button"
+                class="language-option"
+                data-lang="ar"
+                dir="rtl"
+              >
+                العربية
+              </button>
+            </div>
+            <button
+              class="notification"
+              type="button"
+              aria-label="Notifications"
+            >
+              <img src="bell-outline.svg" alt="" />
+            </button>
+          </div>
+        </header>
+
+        <div class="workspace">
+          <section class="panel setup-panel" aria-labelledby="chooseTitle">
+            <div class="panel-content">
+              <div class="panel-heading">
+                <h2 id="chooseTitle" data-i18n="chooseProducts">
+                  1. Choose products
+                </h2>
+                <button
+                  class="button button-light customize-button"
+                  id="customizeButton"
+                  type="button"
+                  aria-haspopup="dialog"
+                  aria-expanded="false"
+                  aria-controls="customizeDialog"
+                  data-i18n="customize"
+                >
+                  Customize labels
+                </button>
+              </div>
+
+              <div class="add-row">
+                <label class="field product-field">
+                  <span data-i18n="selectProduct">Select product</span>
+                  <div class="product-picker" id="productPicker">
+                    <select
+                      id="productSelect"
+                      class="picker-native"
+                      aria-hidden="true"
+                      tabindex="-1"
+                    ></select>
+                    <button
+                      class="product-picker-trigger"
+                      id="productPickerTrigger"
+                      type="button"
+                      aria-haspopup="listbox"
+                      aria-expanded="false"
+                      aria-controls="productMenu"
+                    >
+                      <span id="selectedProductLabel"
+                        >Product 1 · SKU-2210</span
+                      >
+                      <img src="chevron-down.svg" alt="" />
+                    </button>
+                    <div
+                      class="product-menu"
+                      id="productMenu"
+                      role="listbox"
+                      aria-label="Products"
+                      hidden
+                    ></div>
+                  </div>
+                </label>
+                <label class="field quantity-field">
+                  <span data-i18n="numberOfLabels">Number of labels</span>
+                  <input
+                    id="quantityInput"
+                    type="text"
+                    inputmode="numeric"
+                    value="10"
+                    placeholder="e.g. 10"
+                    data-i18n-placeholder="quantityPlaceholder"
+                    autocomplete="off"
+                  />
+                </label>
+                <button
+                  class="button button-primary add-button"
+                  id="addButton"
+                  type="button"
+                  disabled
+                  data-i18n="addProduct"
+                >
+                  Add product
+                </button>
+              </div>
+
+              <div class="table-wrap">
+                <table class="product-table">
+                  <thead>
+                    <tr>
+                      <th class="number-col">#</th>
+                      <th data-i18n="productName">PRODUCT NAME</th>
+                      <th data-i18n="numberOfLabelsCaps">NUMBER OF LABELS</th>
+                      <th class="actions-col">
+                        <span class="sr-only" data-i18n="actions">Actions</span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody id="productRows"></tbody>
+                  <tfoot>
+                    <tr>
+                      <td></td>
+                      <td data-i18n="totalLabels">Total labels</td>
+                      <td id="totalLabels">12</td>
+                      <td></td>
+                    </tr>
+                  </tfoot>
+                </table>
+                <div
+                  class="empty-table"
+                  id="emptyTable"
+                  hidden
+                  data-i18n="emptyProducts"
+                >
+                  Add a product to start creating labels.
+                </div>
+              </div>
+
+              <div class="setup-footer">
+                <button
+                  class="button button-primary generate-button"
+                  id="generateButton"
+                  type="button"
+                >
+                  <img src="barcode.svg" alt="" /><span
+                    data-i18n="generate"
+                    >Generate</span
+                  >
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel preview-panel" aria-labelledby="previewTitle">
+            <div class="preview-content">
+              <div class="preview-heading">
+                <h2 id="previewTitle">
+                  <span data-i18n="preview">2. Label preview</span
+                  ><span class="preview-count" id="previewCount"
+                    >· 12 labels</span
+                  >
+                </h2>
+                <div class="preview-actions">
+                  <button
+                    class="button button-light"
+                    type="button"
+                    id="printButton"
+                    disabled
+                    data-i18n="print"
+                  >
+                    Print
+                  </button>
+                  <button
+                    class="button button-primary download-button"
+                    type="button"
+                    id="downloadButton"
+                    disabled
+                    data-i18n="download"
+                  >
+                    Download
+                  </button>
+                </div>
+              </div>
+              <div class="label-grid" id="labelGrid" aria-live="polite"></div>
+            </div>
+          </section>
+        </div>
+
+        <footer class="copyright">
+          <span class="copyright-mark">c</span
+          ><span>2027 Smart Warehouse. All rights reserved.</span>
+        </footer>
+      </main>
+    </div>
+
+    <dialog class="customize-dialog" id="customizeDialog">
+      <form method="dialog" id="customizeForm">
+        <div class="dialog-main">
+          <div class="dialog-top">
+            <div class="dialog-heading">
+              <h2 data-i18n="customizeTitle">Customize labels</h2>
+            </div>
+            <div class="label-size-field">
+              <span data-i18n="labelSize">Label size</span>
+              <div class="label-size-picker" id="labelSizePicker">
+                <button
+                  class="label-size-trigger"
+                  id="labelSizeTrigger"
+                  type="button"
+                  aria-haspopup="listbox"
+                  aria-expanded="false"
+                  aria-controls="labelSizeMenu"
+                >
+                  <span id="labelSizeLabel">Small - 50×30 mm</span>
+                  <img src="chevron-down.svg" alt="" />
+                </button>
+                <div
+                  class="label-size-menu"
+                  id="labelSizeMenu"
+                  role="listbox"
+                  aria-label="Label size"
+                  hidden
+                ></div>
+              </div>
+            </div>
+          </div>
+          <div class="label-options">
+            <div class="label-option">
+              <span data-i18n="storeName">Store name</span
+              ><button
+                class="setting-toggle is-on"
+                type="button"
+                data-setting="showStoreName"
+                aria-pressed="true"
+              >
+                ON
+              </button>
+            </div>
+            <div class="label-option">
+              <span data-i18n="skuNumberOption">SKU number</span
+              ><button
+                class="setting-toggle is-on"
+                type="button"
+                data-setting="showSku"
+                aria-pressed="true"
+              >
+                ON
+              </button>
+            </div>
+            <div class="label-option">
+              <span data-i18n="productNameOption">Product name</span
+              ><button
+                class="setting-toggle is-on"
+                type="button"
+                data-setting="showProductName"
+                aria-pressed="true"
+              >
+                ON
+              </button>
+            </div>
+            <div class="label-option">
+              <span data-i18n="priceOption">Price</span
+              ><button
+                class="setting-toggle is-on"
+                type="button"
+                data-setting="showPrice"
+                aria-pressed="true"
+              >
+                ON
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="dialog-actions">
+          <button
+            class="button button-light dialog-cancel"
+            id="cancelCustomize"
+            value="cancel"
+            data-i18n="cancel"
+          >
+            Cancel</button
+          ><button
+            class="button button-primary dialog-save"
+            id="saveCustomize"
+            value="save"
+            data-i18n="save"
+          >
+            Save
+          </button>
+        </div>
+      </form>
+    </dialog>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>

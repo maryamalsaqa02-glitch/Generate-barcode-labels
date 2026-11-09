@@ -1,0 +1,32 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Warehouse mark" clip-path="url(#clip0_0_96)">
+<rect id="Box seam" x="12.6295" y="14.4103" width="0.485714" height="1.45714" fill="#001322"/>
+<rect id="Inventory box" x="10.5251" y="14.4103" width="4.69524" height="4.37143" rx="0.32381" fill="url(#paint0_linear_0_96)"/>
+<rect id="Box seam_2" x="7.28577" y="14.4103" width="0.485714" height="1.45714" fill="#001322"/>
+<rect id="Inventory box_2" x="5.18297" y="14.4103" width="4.69524" height="4.37143" rx="0.32381" fill="url(#paint1_linear_0_96)"/>
+<rect id="Box seam_3" x="10.0393" y="9.55479" width="0.485714" height="1.45714" fill="#001322"/>
+<rect id="Inventory box_3" x="7.77086" y="9.55479" width="4.85714" height="4.37143" rx="0.32381" fill="url(#paint2_linear_0_96)"/>
+<path id="Warehouse outline" d="M0.647785 4.61287L9.55255 0.164745C9.98429 -0.0549151 10.416 -0.0549151 10.8478 0.164745L19.7525 4.61287C20.1843 4.83253 20.4002 5.21693 20.4002 5.76608V18.122C20.4002 18.5613 20.1843 18.781 19.7525 18.781H18.6192V6.09557L10.2002 1.8122L1.78112 6.09557V18.781H0.647785C0.216039 18.781 0.000165939 18.5613 0.000165939 18.122V5.76608C0.000165939 5.21693 0.216039 4.83253 0.647785 4.61287Z" fill-rule="evenodd" clip-rule="evenodd" fill="url(#paint3_linear_0_96)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_96" x1="10.5251" y1="14.4103" x2="15.2204" y2="14.4103" gradientUnits="userSpaceOnUse">
+<stop stop-color="#A0B4D6"/>
+<stop offset="0.6" stop-color="#4B6DC5"/>
+</linearGradient>
+<linearGradient id="paint1_linear_0_96" x1="5.18297" y1="14.4103" x2="9.87821" y2="14.4103" gradientUnits="userSpaceOnUse">
+<stop stop-color="#A0B4D6"/>
+<stop offset="0.6" stop-color="#4B6DC5"/>
+</linearGradient>
+<linearGradient id="paint2_linear_0_96" x1="7.77086" y1="9.55479" x2="12.628" y2="9.55479" gradientUnits="userSpaceOnUse">
+<stop stop-color="#A0B4D6"/>
+<stop offset="0.6" stop-color="#4B6DC5"/>
+</linearGradient>
+<linearGradient id="paint3_linear_0_96" x1="0.000165939" y1="0" x2="20.4002" y2="0" gradientUnits="userSpaceOnUse">
+<stop stop-color="#A0B4D6"/>
+<stop offset="0.6" stop-color="#4B6DC5"/>
+</linearGradient>
+<clipPath id="clip0_0_96">
+<rect width="24" height="24" fill="white"/>
+</clipPath>
+</defs>
+</svg>
